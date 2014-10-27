@@ -1,0 +1,17 @@
+
+<h1><%=@restaraunt.name%></h1>
+<div class="pull-right"><%=image_tag @restaraunt.avatar_url(:mast).to_s%></div>
+<img src="https://maps.googleapis.com/maps/api/staticmap?markers=size:mid|<%=CGI.escape @restaraunt.address%>&zoom=13&size=600x300", class="pull-right">
+<p><%=@restaraunt.address%></p>
+<p><%=@restaraunt.number%></p>
+<p><%=@restaraunt.description%></p>
+
+ 
+
+
+ 
+
+<%= link_to 'Edit', edit_restaraunt_path%>
+
+
+

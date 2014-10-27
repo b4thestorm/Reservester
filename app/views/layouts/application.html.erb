@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reservester</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <ul class="nav nav-tabs" role="tablist">
+  <li class="active"><%=link_to 'All', restaraunts_path%></li>
+  <li><%=link_to 'New', new_restaraunt_path%></li>
+  <li><a href="#">Messages</a></li>
+</ul>
+	<div class="container">
+      <div class="row">
+        <div class="span9"><%= yield %></div>
+        <div class="span3">
+        </div>
+      </div>
+  </div>
+
+</body>
+</html>

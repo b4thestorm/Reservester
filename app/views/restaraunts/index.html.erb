@@ -1,0 +1,17 @@
+<h1>Restaraunts</h1>
+</br></br>
+ </br></br>
+
+
+<% @restaraunts.each do |rest| %> 
+<div class="well">
+	<h4><%=rest.name%></h4>
+	<div class="pull-right"><%=image_tag rest.avatar_url(:thumb).to_s %></div>
+	<p><%=rest.address%><p>
+	<p><%=rest.number%><p>
+
+<%= link_to 'Show', restaraunt_path(rest.id), class: 'btn btn-success'%>
+</div>
+
+
+<%end%>
