@@ -8,13 +8,28 @@
 </head>
 <body>
   <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><%=link_to 'All', restaraunts_path%></li>
+  <li><%=link_to 'All', restaraunts_path%></li>
+  <li><%=link_to 'Categories', categories_path%></li>
+  <%if logged_in? %> 
   <li><%=link_to 'New', new_restaraunt_path%></li>
-  <li><a href="#">Messages</a></li>
+  <li><%=link_to 'Logout', logout_path%></li>
+  <%else%>
+  <li><%=link_to 'Login', login_path%></li>
+  <%end%>
+  
+
 </ul>
 	<div class="container">
       <div class="row">
-        <div class="span9"><%= yield %></div>
+        <div class="span9">
+            <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+          <%= yield %>
+        </div>
         <div class="span3">
         </div>
       </div>

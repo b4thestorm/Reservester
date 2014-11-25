@@ -31,16 +31,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-
-
-
+gem "parsley-rails"
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'pry-rails' 
+gem "letter_opener", :group => :development
 gem 'carrierwave'
 gem 'rmagick', :require => false
 gem 'yelp', require: 'yelp'
 
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'

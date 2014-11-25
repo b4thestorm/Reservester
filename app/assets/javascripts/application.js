@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require parsley
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks

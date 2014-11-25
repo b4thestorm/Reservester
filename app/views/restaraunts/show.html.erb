@@ -1,17 +1,55 @@
 
+<div class="pull-right"><%= link_to 'Edit', edit_restaraunt_path%></div>
+<div class="control-group">
+<%=render 'cat_badge', badge: @restaraunt%>
 <h1><%=@restaraunt.name%></h1>
-<div class="pull-right"><%=image_tag @restaraunt.avatar_url(:mast).to_s%></div>
-<img src="https://maps.googleapis.com/maps/api/staticmap?markers=size:mid|<%=CGI.escape @restaraunt.address%>&zoom=13&size=600x300", class="pull-right">
 <p><%=@restaraunt.address%></p>
 <p><%=@restaraunt.number%></p>
 <p><%=@restaraunt.description%></p>
+</div>
+<img src="https://maps.googleapis.com/maps/api/staticmap?markers=size:mid|<%=CGI.escape @restaraunt.address%>&zoom=13&size=600x300", class="pull-right">
+<div class="pull-left"><%=image_tag @restaraunt.avatar_url(:mast).to_s%></div>
+
+</br></br>
+
+
+
+
+
+<div class="container">
+<%=form_for [@restaraunt, @reservation] do |f|%>
+<div class="form-group">
+<%=f.label :email%>
+<%=f.text_field :email%>
+</div>
+<div class="form-group">
+<%=f.label :text%>
+<%=f.text_field :text%>
+</div>
+<div class="form-group">
+<%=f.label :date%>
+<%=f.date_select :datetime%>
+</div>
+<div>
+<%=f.label :time%>
+<%=f.time_select :datetime%>
+</div>
+<%=f.submit 'Set Reservation'%>
+<%end%>
+</div>
+
+
+<%@restaraunt.reservations.each do |reserve|%>
+	<div class="well">
+	<%reserve.email%>
+	<%reserve.text%>
+	</div>
+<%end%>
+
 
  
 
 
- 
-
-<%= link_to 'Edit', edit_restaraunt_path%>
 
 
 

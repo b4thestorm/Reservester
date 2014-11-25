@@ -1,17 +1,30 @@
 <h1>Restaraunts</h1>
 </br></br>
  </br></br>
+ 
 
+ <%@categories.each do |cat|%>
+        <%=link_to cat.name + " " + "#{cat.restaraunts.count}" , category_path(cat)%>
+ <%end%>
 
 <% @restaraunts.each do |rest| %> 
-<div class="well">
-	<h4><%=rest.name%></h4>
+<div class="panel panel-default">
+	
+	<div class="panel-heading"><h4><%=rest.name%></h4></div>
+	<%rest.categories.each do |cat|%>
+	 <div class="panel-body">
+  	<span class="badge"><%=cat.name%></span>
+   <%end%>
 	<div class="pull-right"><%=image_tag rest.avatar_url(:thumb).to_s %></div>
 	<p><%=rest.address%><p>
 	<p><%=rest.number%><p>
 
 <%= link_to 'Show', restaraunt_path(rest.id), class: 'btn btn-success'%>
-</div>
+  </div>
+  </div>
+   <%end%> 
 
 
-<%end%>
+  
+
+

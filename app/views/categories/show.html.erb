@@ -1,0 +1,8 @@
+<h1><%=@category.name%></h1></br>
+<hr/>
+
+<%@category.restaraunts.each do |rest|%>
+	</br><%=link_to rest.name, restaraunt_path(rest)%>
+<%end%>
+
+

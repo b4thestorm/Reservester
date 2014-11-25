@@ -1,0 +1,9 @@
+
+<h1>Categories</h1></br>
+<hr/>
+
+<%@categories.each do |cat|%>
+<div class="control-group">
+<h2><%=link_to cat.name, category_path(cat)%></h2>
+</div>
+<%end%>

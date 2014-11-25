@@ -3,6 +3,9 @@
 </br>
 </br>
 
+<div class='control-group, pull-right'>
+[<%=link_to 'Add Category', new_category_path %>]
+</div>
 
 <div class= "container">
 <%=form_for @restaraunt do |f|%>
@@ -24,6 +27,12 @@
 </div>
 <div class="form-group">
 <%=f.file_field :avatar%>
+</div>
+<div class="form-group">
+  <%=f.label "Categories"%>
+  <%=f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %> 
+    <% cb.label(class: "checkbox-inline"){cb.check_box(class:"checkbox") + cb.text} %>
+ <%end%>
 </div>
 <div class="form-group">
 <%= f.submit %>

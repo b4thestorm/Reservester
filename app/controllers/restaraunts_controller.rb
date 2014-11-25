@@ -1,16 +1,17 @@
 class RestarauntsController < ApplicationController
+	#before_action :require_user, only: [:edit,:update,:destroy]
+
 
 def index
-	@restaraunts = Restaraunt.all 
+	@restaraunts = Restaraunt.all
+	@categories = Category.all
 end
-
-#<https://maps.googleapis.com/maps/api/staticmap?parameters>
-#/////////Condense the link to a button in the view that automatically 
-#{generates a map using the CGI.escape().strip command.... /////////}
 
 ###################################################
 def show
 	@restaraunt = Restaraunt.find(params[:id])
+	@reservation = Reservation.new
+	
 end
 
 
@@ -22,7 +23,10 @@ end
 
 ###################################################
 def create
+
+
 	@restaraunt = Restaraunt.new(rest_params)
+	@restaraunt.user = current_user
 
 	if @restaraunt.save
 		redirect_to @restaraunt 
@@ -41,6 +45,7 @@ end
 ###################################################
 
 def update
+	
 		@restaraunt = Restaraunt.find(params[:id])
 		
 		if @restaraunt.update(rest_params)
@@ -61,6 +66,6 @@ end
 private 
 
 def rest_params
- 		params.require(:restaraunt).permit(:name, :description, :address, :number, :avatar)
+ 		params.require(:restaraunt).permit(:name, :description, :address, :number, :avatar, category_ids:[])
 end
 end
