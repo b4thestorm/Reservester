@@ -1,10 +1,14 @@
 class SessionsController < ApplicationController
+def new
 
+end
 
 def create
+
+
 user = User.where(username: params[:username]).first
 	if user && user.authenticate(params[:password])
-	session[:user_id] = user.id
+	session[:user_id] = user.id #this is how we effect the application
 	flash[:notice] = "Welcome, youve logged in."
 	redirect_to root_path
 	else

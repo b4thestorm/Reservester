@@ -1,5 +1,5 @@
 class RestarauntsController < ApplicationController
-	#before_action :require_user, only: [:edit,:update,:destroy]
+	before_action :require_user, except: [:index, :show]
 
 
 def index

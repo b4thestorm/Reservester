@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
 def create
 	@restaraunt = Restaraunt.find(params[:restaraunt_id])
 	@reservation = @restaraunt.reservations.build(params.require(:reservation).permit(:email,:text))
-	@user = @restaraunt.user
+	@user = @restaraunt.user #should i make it so that reservations need a current user? 
 
 	if @reservation.save
 		flash[:notice] = "Your reservation has been made"
