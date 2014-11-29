@@ -5,8 +5,9 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
+
 	@category = Category.find(params[:id])
-	@restaraunt = Restaraunt.find(params[:id])
+	#@restaraunt = Restaraunt.find(params[:id])
 
 	end
 

@@ -10,7 +10,8 @@
   <ul class="nav nav-tabs" role="tablist">
   <li><%=link_to 'All', restaraunts_path%></li>
   <li><%=link_to 'Categories', categories_path%></li>
-  <%if logged_in? %> 
+  <%if logged_in? %>
+  <li class="pull-right"><%=link_to 'Hi ' + current_user.username  %></li> 
   <li><%=link_to 'New', new_restaraunt_path%></li>
   <li><%=link_to 'Logout', logout_path%></li>
   <%else%>
