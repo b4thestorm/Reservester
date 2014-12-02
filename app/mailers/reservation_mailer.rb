@@ -6,7 +6,7 @@ class ReservationMailer < ActionMailer::Base
 		@owner_username = user.username
 		
 		mail( to: @owner_email,
-		subject: 'New Reservation to Cookie')
+		subject: 'Congratulations, you have a new reservation!')
 	end 
 #practical object oriented design in ruby 
 #sandy metz

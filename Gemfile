@@ -39,6 +39,7 @@ gem "letter_opener", :group => :development
 gem 'carrierwave'
 gem 'rmagick', :require => false
 gem 'yelp', require: 'yelp'
+gem 'sendgrid-ruby'
 
 
 # Use ActiveModel has_secure_password

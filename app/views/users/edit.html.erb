@@ -1,7 +1,7 @@
+<%= render '/sessions/headers', title: 'Edit Profile'%>
 
 <div class="well">
 	<fieldset>
-		<legend>Registration</legend>
 <%= form_for @user do |f|%>
 
 
@@ -14,8 +14,7 @@
 
 	<%=f.label :password%>
 	<%=f.password_field :password%></br></br>
-<%=f.submit 'Register', class: 'btn btn-success'%>
+<%=f.submit 'Update', class: 'btn btn-success'%>
 <%end%>
 </fieldset>
 </div>
-

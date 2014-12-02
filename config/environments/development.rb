@@ -12,15 +12,13 @@ Rails.application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               'example.com',
-  user_name:            'd3e696e21f778ab97712d1bc37d7b4ae',
-  password:             '0a1a3dd13f6c225e4e095a4a96905fee',
-  authentication:       'plain',
-  enable_starttls_auto: true  }
+  config.action_mailer.delivery_method = :smtp
+ # ActionMailer::Base.smtp_settings = { :user_name => 'your_sendgrid_username’,
+  #                                     :password => 'your_sendgrid_password’,
+   #                                   :domain => 'developer-arnold.com’,
+    #                                  :address => 'smtp.sendgrid.net’,
+     #                                 :port => 587, :authentication => :plain,
+      #                                :enable_starttls_auto => true }
 
 
   # Don't care if the mailer can't send.
