@@ -1,5 +1,5 @@
 class RestarauntsController < ApplicationController
-	before_action :require_user, except: [:index, :show]
+	#before_action :require_user, except: [:index, :show]
 
 
 def index
@@ -66,6 +66,6 @@ end
 private 
 
 def rest_params
- 		params.require(:restaraunt).permit(:name, :description, :address, :number, :avatar, category_ids:[])
+ 		params.require(:restaraunt).permit(:name, :description, :address, :number, :avatar,:avatar_cache,:menu, category_ids:[])
 end
 end

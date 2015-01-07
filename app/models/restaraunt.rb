@@ -1,5 +1,6 @@
 class Restaraunt < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :menu, AvatarUploader
   belongs_to :user , foreign_key: :user_id  
   
   has_many :reservations
