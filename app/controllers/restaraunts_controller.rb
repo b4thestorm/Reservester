@@ -1,5 +1,6 @@
 class RestarauntsController < ApplicationController
-	#before_action :require_user, except: [:index, :show]
+	before_action :require_user, except: [:index, :show]
+	before_action :admin, only: [:edit]
 
 
 def index
@@ -39,6 +40,7 @@ end
 ###################################################
 def edit
 	@restaraunt = Restaraunt.find(params[:id])
+
 end
 
 

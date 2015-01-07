@@ -4,7 +4,8 @@
 <div class="pull-right">
 	<h3>Location Info : <h3>
 <img class="rounded" src="https://maps.googleapis.com/maps/api/staticmap?markers=size:mid|<%=CGI.escape @restaraunt.address%>&zoom=13&size=600x300", class="pull-right">
-</div></br></br>
+</div>
+</br></br>
 <div class="control-group">
 <%=render 'cat_badge', badge: @restaraunt%>
 <h1><%=@restaraunt.name%></h1>

@@ -18,5 +18,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def admin  
+    if session[:user_id]!= Restaraunt.user_id 
+      redirect_to root_path
+    end
+  end
   
 end
