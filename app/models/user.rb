@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, on: :create  
 
 	
-
+	
 	def owner?
 		self.roles == 'owner'
 	end
